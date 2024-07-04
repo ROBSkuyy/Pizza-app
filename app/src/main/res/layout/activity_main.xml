@@ -1,297 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/greetingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Hey User!"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/searchEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_margin="16dp"
+        android:hint="Search pizza"
+        android:padding="8dp" />
 
-        <!-- Top section with delivery information and cart -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp">
+    <TextView
+        android:id="@+id/openPizzasTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Available Pizzas"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-            <!-- Delivery information -->
-            <LinearLayout
-                android:id="@+id/delivery_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/deliver_to"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DELIVER TO"
-                    android:textColor="#FF5722"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Halal Lab office"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:drawableEnd="@drawable/ic_arrow_down"
-                    android:drawablePadding="4dp"
-                    android:paddingTop="4dp" />
-            </LinearLayout>
-
-            <!-- Cart icon with notification badge -->
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true">
-
-                <ImageView
-                    android:id="@+id/cart_icon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentEnd="true"
-                    android:contentDescription="Cart"
-                    android:src="@drawable/ic_cart" />
-
-                <TextView
-                    android:id="@+id/cart_badge"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignTop="@id/cart_icon"
-                    android:layout_alignEnd="@id/cart_icon"
-                    android:gravity="center"
-                    android:text="2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12sp"
-                    android:translationX="10dp"
-                    android:translationY="-10dp" />
-            </RelativeLayout>
-        </RelativeLayout>
-
-        <!-- Greeting message -->
-        <TextView
-            android:id="@+id/greeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hey Halal, Good Afternoon!"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            android:paddingBottom="16dp" />
-
-        <!-- Search bar -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/orange_border"
-            android:orientation="horizontal"
-            android:padding="8dp"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_search"
-                android:contentDescription="Search icon" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Search dishes"
-                android:padding="8dp"
-                android:background="@android:color/transparent"
-                android:textColor="#000000"
-                android:textColorHint="#A6A6A6"
-                android:inputType="text"/>
-        </LinearLayout>
-
-        <!-- Open restaurants title -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="24dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Open Menus"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#000000" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="See All"
-                android:textSize="16sp"
-                android:textColor="#FF5722"
-                android:drawableEnd="@drawable/ic_arrow_right"
-                android:drawablePadding="4dp" />
-        </LinearLayout>
-
-        <!-- Restaurant list -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- First restaurant item -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="16dp">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/calzone"
-                    android:contentDescription="Calzone European"
-                    android:scaleType="centerCrop"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="8dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Calzone European"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Pizza - Chiken - Papper - Saus"
-                        android:textSize="14sp"
-                        android:textColor="#A6A6A6" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="4dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="4.7"
-                            android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_star"
-                            android:drawablePadding="4dp"
-                            android:textColor="#FFA000" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Free"
-                            android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_delivery"
-                            android:drawablePadding="4dp"
-                            android:textColor="#000000" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="20 min"
-                            android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_time"
-                            android:drawablePadding="4dp"
-                            android:textColor="#000000"
-                            android:paddingStart="16dp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Second restaurant item -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingBottom="16dp">
-
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/redhouse"
-                    android:contentDescription="Red House"
-                    android:scaleType="centerCrop"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingStart="8dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Red House"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Pizza - Chiken - Riche - Wings"
-                        android:textSize="14sp"
-                        android:textColor="#A6A6A6" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingTop="4dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="4.7"
-                            android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_star"
-                            android:drawablePadding="4dp"
-                            android:textColor="#FFA000" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Free"
-                            android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_delivery"
-                            android:drawablePadding="4dp"
-                            android:textColor="#000000" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="20 min"
-                            android:textSize="14sp"
-                            android:drawableStart="@drawable/ic_time"
-                            android:drawablePadding="4dp"
-                            android:textColor="#000000"
-                            android:paddingStart="16dp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pizzasRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        tools:listitem="@layout/item_pizza" />
+</LinearLayout>
