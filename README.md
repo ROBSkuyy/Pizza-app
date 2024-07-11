@@ -1,6 +1,6 @@
 # Aplikasi Pemesanan Pizza Secara Online
 
-![Logo](images/logo.png)
+![Logo](images/Logo.png)
 
 
 
