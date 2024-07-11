@@ -1,5 +1,9 @@
 # Aplikasi Pemesanan Pizza Secara Online
 
+![Logo](images/logo.png)
+
+
+
 ## Deskripsi
 
 Aplikasi Pemesanan Pizza Secara Online adalah solusi modern untuk memesan pizza dengan mudah dan cepat. Aplikasi ini dirancang untuk memberikan pengalaman pengguna yang intuitif dan menyenangkan, memungkinkan pengguna untuk menjelajahi menu, memesan pizza, dan mengatur pengiriman langsung dari perangkat mobile mereka.
